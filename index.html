@@ -3,7 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SpaceBank</title>
+  <title>SpaceBank — Banking for a multiplanet species</title>
+
+  <meta name="description" content="SpaceBank is building the financial rails for a multiplanet civilization — money that moves with you across Earth, orbit, the Moon, and Mars. Join the waitlist for early access.">
+  <meta name="keywords" content="SpaceBank, space economy, multiplanet banking, Mars banking, orbital finance, space fintech">
+  <meta name="author" content="SpaceBank">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020202">
+  <link rel="canonical" href="https://www.belto.space/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SpaceBank">
+  <meta property="og:title" content="SpaceBank — Banking for a multiplanet species">
+  <meta property="og:description" content="Money that moves with you across Earth, orbit, the Moon, and Mars. Join the waitlist for early access.">
+  <meta property="og:url" content="https://www.belto.space/">
+  <meta property="og:image" content="https://www.belto.space/images/Mars.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SpaceBank — Banking for a multiplanet species">
+  <meta name="twitter:description" content="Money that moves with you across Earth, orbit, the Moon, and Mars. Join the waitlist for early access.">
+  <meta name="twitter:image" content="https://www.belto.space/images/Mars.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SpaceBank",
+    "url": "https://www.belto.space/",
+    "logo": "https://www.belto.space/apple-touch-icon.png",
+    "description": "SpaceBank is building the financial rails for a multiplanet civilization — money that moves with you across Earth, orbit, the Moon, and Mars."
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,7 +130,7 @@
       object-fit: cover;
       object-position: center center;
       z-index: -3;
-      transform: translate(-50%, -50%) scale(1.08);
+      transform: translate(-50%, -50%) scale(1.14);
       transform-origin: center center;
       filter: brightness(.82) contrast(1.08) saturate(.92);
       transition: transform 1.6s var(--ease), filter 1.6s var(--ease);
@@ -124,7 +162,7 @@
     }
 
     .slide.active img {
-      transform: translate(-50%, -50%) scale(1.04);
+      transform: translate(-50%, -50%) scale(1.1);
       filter: brightness(.9) contrast(1.08) saturate(.98);
     }
 
@@ -184,6 +222,17 @@
       line-height: .92;
       color: var(--paper);
       text-shadow: 0 8px 40px rgba(0,0,0,.42);
+    }
+
+    .subcopy {
+      margin: 26px 0 0;
+      max-width: 540px;
+      color: var(--paper);
+      opacity: .82;
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.6;
+      letter-spacing: .005em;
+      text-shadow: 0 2px 18px rgba(0,0,0,.5);
     }
 
     .actions {
@@ -344,12 +393,12 @@
 
   <main>
     <section class="slide active">
-      <img src="images/Earth.webp" alt="Mars from space">
+      <img src="images/Earth.webp" alt="Earth from space" fetchpriority="high">
       <div class="copy place-top-left">
         <h1>Your money. Beyond Earth.</h1>
         <div class="actions">
           <a class="btn" href="#demo">Launch Demo</a>
-          <a class="btn" href="#waitlist">Waitlist</a>
+          <a class="btn" href="waitlist.html">Waitlist</a>
         </div>
       </div>
     </section>
@@ -358,6 +407,7 @@
       <img src="images/FIRE.png" alt="Engine test fire">
       <div class="copy place-bottom-left">
         <h2>A multiplanet species needs a multiplanet bank</h2>
+        <p class="subcopy">From orbital habitats to Martian settlements, the next economy needs financial infrastructure that doesn't stop at the edge of the atmosphere.</p>
       </div>
     </section>
 
@@ -365,6 +415,7 @@
       <img src="images/Separation.png" alt="Spacecraft above Earth">
       <div class="copy place-bottom-left">
         <h2>People will live on Earth, in orbit, on the Moon, and on Mars.</h2>
+        <p class="subcopy">Wherever people settle, they'll earn, save, and spend — across distances and time delays that today's banks were never built to handle.</p>
       </div>
     </section>
 
@@ -376,9 +427,10 @@
     </section>
 
     <section class="slide light" id="demo">
-      <img src="images/Mars.png" alt="Earth from space">
+      <img src="images/Mars.png" alt="The surface of Mars">
       <div class="copy place-top-left">
         <h2>Banking should still work, even when you are on Mars.</h2>
+        <p class="subcopy">Hold, send, and settle value across worlds — designed for latency, distance, and a future where the nearest branch is 140 million miles away.</p>
         <div class="actions">
           <a class="btn" href="#">Launch Demo</a>
         </div>
@@ -416,8 +468,8 @@
     const moveImages = () => {
       slides.forEach(slide => {
         const img = slide.querySelector('img');
-        const y = clamp(slide.getBoundingClientRect().top * -0.025, -42, 42);
-        img.style.transform = `translate(-50%, calc(-50% + ${y}px)) scale(1.08)`;
+        const y = clamp(slide.getBoundingClientRect().top * -0.02, -26, 26);
+        img.style.transform = `translate(-50%, calc(-50% + ${y}px)) scale(1.14)`;
       });
     };
 
