@@ -4,14 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SpaceBank — Banking for a multiplanet species</title>
-
   <meta name="description" content="SpaceBank is building the financial rails for a multiplanet civilization — money that moves with you across Earth, orbit, the Moon, and Mars. Join the waitlist for early access.">
   <meta name="keywords" content="SpaceBank, space economy, multiplanet banking, Mars banking, orbital finance, space fintech">
   <meta name="author" content="SpaceBank">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#020202">
   <link rel="canonical" href="https://www.belto.space/">
-
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SpaceBank">
@@ -19,19 +17,16 @@
   <meta property="og:description" content="Money that moves with you across Earth, orbit, the Moon, and Mars. Join the waitlist for early access.">
   <meta property="og:url" content="https://www.belto.space/">
   <meta property="og:image" content="https://www.belto.space/images/Mars.png">
-
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SpaceBank — Banking for a multiplanet species">
   <meta name="twitter:description" content="Money that moves with you across Earth, orbit, the Moon, and Mars. Join the waitlist for early access.">
   <meta name="twitter:image" content="https://www.belto.space/images/Mars.png">
-
   <!-- Favicons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,11 +37,9 @@
     "description": "SpaceBank is building the financial rails for a multiplanet civilization — money that moves with you across Earth, orbit, the Moon, and Mars."
   }
   </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --paper: #f2f0e8;
@@ -55,14 +48,11 @@
       --bg: #020202;
       --ease: cubic-bezier(.19,1,.22,1);
     }
-
     * { box-sizing: border-box; }
-
     html {
       scroll-behavior: smooth;
       background: var(--bg);
     }
-
     body {
       margin: 0;
       background: var(--bg);
@@ -70,7 +60,6 @@
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
       overflow-x: hidden;
     }
-
     .nav {
       position: fixed;
       inset: 0 0 auto 0;
@@ -82,7 +71,6 @@
       justify-content: space-between;
       pointer-events: none;
     }
-
     .brand,
     .nav a {
       font-size: 12px;
@@ -93,21 +81,18 @@
       text-decoration: none;
       text-shadow: 0 1px 20px rgba(0,0,0,.45);
     }
-
     .nav a {
       pointer-events: auto;
       letter-spacing: .18em;
       opacity: .72;
       transition: opacity .5s var(--ease), transform .5s var(--ease);
     }
-
     .nav a:hover,
     .nav a:focus-visible {
       opacity: 1;
       transform: translateY(-2px);
       outline: none;
     }
-
     .slide {
       position: relative;
       min-height: 100vh;
@@ -118,7 +103,6 @@
       align-items: flex-start;
       padding: clamp(108px, 16vh, 170px) clamp(24px, 6vw, 88px);
     }
-
     .slide img {
       position: absolute;
       top: 50%;
@@ -136,15 +120,12 @@
       transition: transform 1.6s var(--ease), filter 1.6s var(--ease);
       will-change: transform;
     }
-
-
     .slide:nth-child(1) img { object-position: center center; }
     .slide:nth-child(2) img { object-position: center center; }
     .slide:nth-child(3) img { object-position: center center; }
     .slide:nth-child(4) img { object-position: center center; }
     .slide:nth-child(5) img { object-position: center center; }
     .slide:nth-child(6) img { object-position: center center; }
-
     .slide::before {
       content: "";
       position: absolute;
@@ -154,43 +135,36 @@
         linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.22) 48%, rgba(0,0,0,.42)),
         linear-gradient(0deg, rgba(0,0,0,.48), rgba(0,0,0,.04) 46%, rgba(0,0,0,.40));
     }
-
     .slide.light::before {
       background:
         linear-gradient(90deg, rgba(0,0,0,.50), rgba(0,0,0,.06) 50%, rgba(0,0,0,.22)),
         linear-gradient(0deg, rgba(0,0,0,.22), rgba(0,0,0,.02) 54%, rgba(0,0,0,.34));
     }
-
     .slide.active img {
       transform: translate(-50%, -50%) scale(1.05);
       filter: brightness(.9) contrast(1.08) saturate(.98);
     }
-
     .copy {
       width: min(920px, 88vw);
       opacity: 0;
       transform: translateY(30px);
       transition: opacity .9s var(--ease), transform .9s var(--ease);
     }
-
     .slide.active .copy {
       opacity: 1;
       transform: translateY(0);
     }
-
     .place-top-left {
       align-self: flex-start;
       margin-left: 0;
       margin-right: auto;
     }
-
     .place-bottom-left {
       align-self: flex-end;
       margin-left: 0;
       margin-right: auto;
       padding-bottom: clamp(46px, 8vh, 96px);
     }
-
     h1,
     h2 {
       margin: 0;
@@ -202,15 +176,12 @@
       text-wrap: balance;
       text-shadow: 0 8px 40px rgba(0,0,0,.42);
     }
-
     h1 {
       font-size: clamp(88px, 15vw, 238px);
     }
-
     h2 {
       font-size: clamp(68px, 10.8vw, 166px);
     }
-
     .sentence {
       margin: 0;
       max-width: 650px;
@@ -223,7 +194,6 @@
       color: var(--paper);
       text-shadow: 0 8px 40px rgba(0,0,0,.42);
     }
-
     .subcopy {
       margin: 26px 0 0;
       max-width: 540px;
@@ -234,14 +204,12 @@
       letter-spacing: .005em;
       text-shadow: 0 2px 18px rgba(0,0,0,.5);
     }
-
     .actions {
       margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
     }
-
     .btn {
       position: relative;
       display: inline-flex;
@@ -267,7 +235,6 @@
         color .55s var(--ease),
         box-shadow .55s var(--ease);
     }
-
     .btn::before {
       content: "";
       position: absolute;
@@ -277,7 +244,6 @@
       transition: transform .65s var(--ease);
       z-index: -1;
     }
-
     .btn:hover,
     .btn:focus-visible {
       transform: translateY(-3px);
@@ -287,23 +253,19 @@
       box-shadow: 0 18px 60px rgba(0,0,0,.24);
       outline: none;
     }
-
     .btn:hover::before,
     .btn:focus-visible::before {
       transform: translateX(0);
     }
-
     .btn:active {
       transform: translateY(-1px) scale(.99);
     }
-
     .legal {
       margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
     }
-
     .legal a {
       color: var(--muted);
       text-decoration: none;
@@ -313,7 +275,6 @@
       text-transform: uppercase;
       transition: color .45s var(--ease), opacity .45s var(--ease), transform .45s var(--ease);
     }
-
     .legal a:hover,
     .legal a:focus-visible {
       color: var(--paper);
@@ -321,7 +282,6 @@
       transform: translateY(-2px);
       outline: none;
     }
-
     /* How it works */
     .howit { align-items: flex-start; }
     .howit .copy { z-index: 3; }
@@ -372,9 +332,7 @@
       transition: opacity 1s var(--ease);
     }
     .slide.active .howit-caption { opacity: .95; }
-    .howit-caption .num { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .28em; color: var(--muted); }
     .howit-caption .txt {
-      margin-top: 10px;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-style: italic;
       font-size: clamp(22px, 3vw, 34px);
@@ -383,14 +341,160 @@
       text-shadow: 0 6px 30px rgba(0,0,0,.5);
     }
     @media (max-width: 760px) { .howit-caption .txt { font-size: 22px; } }
-
+    /* On phones the planets sit dead-center and collide with the heading —
+       hide the overlay + caption there; the photo + copy carry the section. */
+    @media (max-width: 720px) {
+      .howit .beam-overlay,
+      .howit .howit-caption { display: none; }
+    }
+    /* Use cases we serve today */
+    .usecases {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 78% 10%, rgba(120,150,220,.16), transparent 34%),
+        radial-gradient(circle at 12% 92%, rgba(200,140,120,.12), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(8,10,20,.4), transparent 70%),
+        #030309;
+      border-top: 1px solid var(--line);
+      padding: clamp(72px, 12vh, 120px) clamp(24px, 6vw, 88px);
+    }
+    /* scroll-driven shooting stars */
+    .uc-star {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: clamp(120px, 16vw, 240px);
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, rgba(180,200,255,.85));
+      filter: drop-shadow(0 0 6px rgba(180,200,255,.9));
+      transform: translate(-30vw, -30vh) rotate(35deg);
+      transform-origin: right center;
+      opacity: 0;
+      z-index: 0;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+    .uc-star::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      margin-top: -2px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 12px 3px rgba(180,200,255,.95);
+    }
+    .uc-star.s2 { width: clamp(90px, 12vw, 180px); }
+    /* drifting starfield */
+    .usecases::before {
+      content: "";
+      position: absolute;
+      inset: -60% 0;
+      z-index: 0;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(242,240,232,.9), transparent),
+        radial-gradient(1px 1px at 60% 70%, rgba(242,240,232,.6), transparent),
+        radial-gradient(1.6px 1.6px at 80% 20%, rgba(242,240,232,.8), transparent),
+        radial-gradient(1px 1px at 40% 80%, rgba(242,240,232,.5), transparent),
+        radial-gradient(1px 1px at 90% 45%, rgba(242,240,232,.7), transparent),
+        radial-gradient(1.4px 1.4px at 10% 60%, rgba(242,240,232,.6), transparent),
+        radial-gradient(1px 1px at 35% 12%, rgba(242,240,232,.5), transparent),
+        radial-gradient(1px 1px at 70% 92%, rgba(242,240,232,.55), transparent);
+      background-size: 340px 340px, 280px 280px, 420px 420px, 240px 240px, 380px 380px, 300px 300px, 200px 200px, 320px 320px;
+      opacity: .55;
+      animation: uc-drift 90s linear infinite;
+    }
+    /* soft aurora glow */
+    .usecases::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      z-index: 0;
+      background: radial-gradient(circle, rgba(120,150,220,.18), transparent 60%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    @keyframes uc-drift { from { transform: translateY(0); } to { transform: translateY(-340px); } }
+    .uc-inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; }
+    .uc-eyebrow {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+    .uc-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: -.055em;
+      line-height: .9;
+      font-size: clamp(40px, 6vw, 84px);
+    }
+    .uc-lede {
+      max-width: 600px;
+      margin: clamp(14px, 2vh, 22px) 0 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.4vw, 18px);
+      line-height: 1.55;
+    }
+    .uc-list {
+      margin-top: clamp(22px, 4vh, 48px);
+      border-top: 1px solid var(--line);
+    }
+    .uc-row {
+      display: grid;
+      grid-template-columns: clamp(56px, 6vw, 88px) 1fr;
+      gap: clamp(18px, 4vw, 56px);
+      align-items: baseline;
+      padding: clamp(14px, 2.4vh, 30px) 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding-left .55s var(--ease);
+    }
+    .uc-row:hover { padding-left: 14px; }
+    .uc-idx {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1;
+      color: rgba(242,240,232,.32);
+    }
+    .uc-body { max-width: 640px; }
+    .uc-body h3 {
+      margin: 0 0 6px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(24px, 3vw, 38px);
+      letter-spacing: -.03em;
+      line-height: 1.05;
+    }
+    .uc-body p { margin: 0; color: var(--muted); font-size: clamp(14px, 1.3vw, 16px); line-height: 1.55; }
+    @media (max-width: 600px) {
+      .usecases { min-height: 0; padding: clamp(64px, 12vh, 110px) clamp(24px, 6vw, 88px); }
+      .uc-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+      .uc-idx { font-size: 30px; }
+    }
     .site-footer {
       position: relative;
       background: #010101;
       border-top: 1px solid var(--line);
       padding: clamp(56px, 9vh, 96px) clamp(24px, 6vw, 88px) clamp(34px, 5vh, 56px);
     }
-
     .footer-grid {
       max-width: 1180px;
       margin: 0 auto;
@@ -398,7 +502,6 @@
       grid-template-columns: 1.6fr 1fr 1fr 1fr;
       gap: clamp(28px, 5vw, 64px);
     }
-
     .footer-brand .fb-name {
       font-size: 13px;
       font-weight: 600;
@@ -406,7 +509,6 @@
       text-transform: uppercase;
       color: var(--paper);
     }
-
     .footer-brand p {
       margin: 16px 0 0;
       max-width: 320px;
@@ -414,7 +516,6 @@
       font-size: 14px;
       line-height: 1.65;
     }
-
     .footer-col h4 {
       margin: 0 0 16px;
       font-size: 11px;
@@ -423,7 +524,6 @@
       text-transform: uppercase;
       color: rgba(242,240,232,.5);
     }
-
     .footer-col a {
       display: block;
       margin-bottom: 12px;
@@ -432,14 +532,12 @@
       font-size: 14px;
       transition: color .4s var(--ease), transform .4s var(--ease);
     }
-
     .footer-col a:hover,
     .footer-col a:focus-visible {
       color: var(--paper);
       transform: translateX(3px);
       outline: none;
     }
-
     .footer-base {
       max-width: 1180px;
       margin: clamp(40px, 6vh, 64px) auto 0;
@@ -453,18 +551,15 @@
       font-size: 12px;
       line-height: 1.6;
     }
-
     .footer-base p { margin: 0; }
     .footer-base .disclaimer { max-width: 620px; }
-
     @media (max-width: 760px) {
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-
+      .usecases::before { animation: none; }
       .copy,
       .slide img,
       .btn,
@@ -474,45 +569,36 @@
         transition: none;
       }
     }
-
     @media (max-width: 720px) {
       .nav {
         height: 62px;
       }
-
       .nav a {
         display: none;
       }
-
       .slide {
         min-height: 100vh;
         min-height: 100svh;
         padding-top: 105px;
       }
-
       .slide img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center center;
       }
-
       h1 {
         font-size: clamp(76px, 23vw, 126px);
       }
-
       h2 {
         font-size: clamp(58px, 18vw, 96px);
       }
-
       .sentence {
         font-size: clamp(44px, 14vw, 78px);
       }
-
       .btn {
         width: 100%;
       }
-
       .place-bottom-left,
       .place-top-left {
         align-self: flex-start;
@@ -524,16 +610,14 @@
     }
   </style>
 </head>
-
 <body>
   <header class="nav">
     <div class="brand">SpaceBank</div>
     <a href="#demo">Launch Demo</a>
   </header>
-
   <main>
     <section class="slide active">
-      <img src="images/Earth-wide.webp" alt="Earth from space" fetchpriority="high">
+      <img src="images/Earth.webp" alt="Earth from space" fetchpriority="high">
       <div class="copy place-top-left">
         <h1>Your money. Beyond Earth.</h1>
         <div class="actions">
@@ -542,7 +626,6 @@
         </div>
       </div>
     </section>
-
     <section class="slide">
       <img src="images/FIRE.png" alt="Engine test fire">
       <div class="copy place-bottom-left">
@@ -550,7 +633,6 @@
         <p class="subcopy">From orbital habitats to Martian settlements, the next economy needs financial infrastructure that doesn't stop at the edge of the atmosphere.</p>
       </div>
     </section>
-
     <section class="slide light">
       <img src="images/Separation.png" alt="Spacecraft above Earth">
       <div class="copy place-bottom-left">
@@ -558,7 +640,6 @@
         <p class="subcopy">Wherever people settle, they'll earn, save, and spend — across distances and time delays that today's banks were never built to handle.</p>
       </div>
     </section>
-
     <section class="slide">
       <img src="images/marsaswell.png" alt="Mars surface">
       <div class="copy place-top-left">
@@ -566,14 +647,12 @@
         <p class="subcopy">One account that travels from launchpad to landing — balances, payments, and identity that follow you off-world and back, without missing a beat.</p>
       </div>
     </section>
-
     <section class="slide howit" id="how">
       <img src="images/solarsystem.jpg" alt="The solar system">
       <div class="copy place-top-left">
         <h2>How your money crosses the void.</h2>
         <p class="subcopy">No cables run between planets. SpaceBank moves value the only way that scales across the solar system — as light.</p>
       </div>
-
       <!-- Overlay slices identically to the photo (xMaxYMid slice), so the beam
            endpoints stay locked to the real Earth & Mars at any frame size. -->
       <svg class="beam-overlay" viewBox="0 0 1920 1080" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
@@ -590,13 +669,10 @@
         <text class="dg-label" x="1381" y="582" text-anchor="middle">Mars</text>
         <text class="dg-label" x="1469" y="592" text-anchor="middle">Earth</text>
       </svg>
-
       <div class="howit-caption" aria-hidden="true">
-        <div class="num" id="step-num">01</div>
         <div class="txt" id="step-txt">Your transfer lifts off from a SpaceBank relay in Mars orbit.</div>
       </div>
     </section>
-
     <section class="slide light" id="demo">
       <img src="images/Mars.png" alt="The surface of Mars">
       <div class="copy place-top-left">
@@ -607,9 +683,47 @@
         </div>
       </div>
     </section>
-
+    <section class="usecases" id="today">
+      <span class="uc-star s1" aria-hidden="true"></span>
+      <span class="uc-star s2" aria-hidden="true"></span>
+      <div class="uc-inner">
+        <p class="uc-eyebrow">What we can serve today</p>
+        <h2 class="uc-title">Built for Earth first.</h2>
+        <p class="uc-lede">The vision reaches Mars — but the rails work on the ground now. These are the things SpaceBank can power for the space economy today.</p>
+        <div class="uc-list">
+          <div class="uc-row">
+            <span class="uc-idx">01</span>
+            <div class="uc-body">
+              <h3>Global accounts</h3>
+              <p>Multi-currency accounts and fast international transfers for teams building across borders and time zones.</p>
+            </div>
+          </div>
+          <div class="uc-row">
+            <span class="uc-idx">02</span>
+            <div class="uc-body">
+              <h3>Mission treasury</h3>
+              <p>Hold, move, and track operating capital for launch providers, satellite operators, and research programs.</p>
+            </div>
+          </div>
+          <div class="uc-row">
+            <span class="uc-idx">03</span>
+            <div class="uc-body">
+              <h3>Remote-site payments</h3>
+              <p>Pay crews and contractors working at launch sites, research stations, and other off-grid locations on Earth.</p>
+            </div>
+          </div>
+          <div class="uc-row">
+            <span class="uc-idx">04</span>
+            <div class="uc-body">
+              <h3>Orbital vault</h3>
+              <p>Store keys, records, and reserves in hardware that physically orbits Earth — air-gapped by distance and near-unreachable, putting your most critical assets beyond the reach of any terrestrial attack.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="slide" id="waitlist">
-      <img src="images/EarthMoon-wide.webp" alt="Earth and Moon">
+      <img src="images/EarthMoon.webp" alt="Earth and Moon">
       <div class="copy place-bottom-left">
         <p class="sentence">SpaceBank is a first step toward a true Space Economy.</p>
         <div class="actions">
@@ -618,7 +732,6 @@
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -628,6 +741,7 @@
       <nav class="footer-col" aria-label="Explore">
         <h4>Explore</h4>
         <a href="#demo">Launch Demo</a>
+        <a href="#today">Use Cases</a>
         <a href="waitlist.html">Join Waitlist</a>
       </nav>
       <nav class="footer-col" aria-label="Legal">
@@ -646,20 +760,15 @@
       <p class="disclaimer">SpaceBank is an experimental product concept. It is not a bank and does not provide insured banking, custody, lending, or money transmission services.</p>
     </div>
   </footer>
-
   <script>
     const slides = [...document.querySelectorAll('.slide')];
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         entry.target.classList.toggle('active', entry.isIntersecting);
       });
     }, { threshold: 0.45 });
-
     slides.forEach(slide => observer.observe(slide));
-
     const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
     const moveImages = () => {
       slides.forEach(slide => {
         if (slide.id === 'how') return; // keep this image static so the laser overlay stays aligned
@@ -668,59 +777,73 @@
         img.style.transform = `translate(-50%, calc(-50% + ${y}px)) scale(1.08)`;
       });
     };
-
     moveImages();
     addEventListener('scroll', moveImages, { passive: true });
     addEventListener('resize', moveImages, { passive: true });
-
     // How-it-works: scrub the laser relay as the section moves through the viewport
     const how = document.getElementById('how');
     const beam = document.getElementById('beam');
     const packet = document.getElementById('packet');
     const recv = document.getElementById('recv');
-    const stepNum = document.getElementById('step-num');
     const stepTxt = document.getElementById('step-txt');
     const BEAM_LEN = 55, X0 = 1394, X1 = 1449;
     const STEPS = [
-      ['01', 'Your transfer lifts off from a SpaceBank relay in Mars orbit.'],
-      ['02', 'An optical laser carries it across deep space to a relay in Earth orbit.'],
-      ['03', "It settles into Earth's banking rails — minutes later, not instantly."]
+      'Your transfer lifts off from a SpaceBank relay in Mars orbit.',
+      'An optical laser carries it across deep space to a relay in Earth orbit.',
+      "It settles into Earth's banking rails — minutes later, not instantly."
     ];
     let lastStep = -1;
-
     const updateHow = () => {
       if (!how) return;
       const r = how.getBoundingClientRect();
       const vh = innerHeight;
       const raw = (vh - r.top) / (vh + r.height);          // 0 entering → 1 leaving
       const p = clamp((raw - 0.15) / 0.6, 0, 1);            // active window
-
       // 1) beam draws (first 30%)
       const draw = clamp(p / 0.3, 0, 1);
       beam.style.strokeDashoffset = (BEAM_LEN * (1 - draw)).toFixed(1);
-
       // 2) packet travels (20%–85%)
       const travel = clamp((p - 0.2) / 0.65, 0, 1);
       packet.setAttribute('cx', (X0 + (X1 - X0) * travel).toFixed(1));
       packet.setAttribute('r', p > 0.16 ? 5 : 0);
-
       // 3) Earth relay receives
       const recvP = clamp((travel - 0.82) / 0.18, 0, 1);
       recv.setAttribute('r', (recvP * 22).toFixed(1));
       recv.style.opacity = (recvP * (1 - recvP) * 4).toFixed(2);
-
       // step caption
       const s = travel < 0.33 ? 0 : travel < 0.85 ? 1 : 2;
       if (s !== lastStep) {
         lastStep = s;
-        stepNum.textContent = STEPS[s][0];
-        stepTxt.textContent = STEPS[s][1];
+        stepTxt.textContent = STEPS[s];
       }
     };
-
     updateHow();
     addEventListener('scroll', updateHow, { passive: true });
     addEventListener('resize', updateHow, { passive: true });
+    // Use-cases: streak shooting stars across the section as it scrolls past
+    const uc = document.querySelector('.usecases');
+    const stars = [...document.querySelectorAll('.uc-star')];
+    const STAR_CFG = [
+      { off: 0.00, ang: 35, fromX: -0.25, toX: 1.25, fromY: -0.20, toY: 1.20 },
+      { off: 0.30, ang: 28, fromX: 1.20, toX: -0.20, fromY: -0.15, toY: 1.10 }
+    ];
+    const updateStars = () => {
+      if (!uc || !stars.length) return;
+      const r = uc.getBoundingClientRect();
+      const vh = innerHeight;
+      const raw = clamp((vh - r.top) / (vh + r.height), 0, 1);
+      stars.forEach((star, i) => {
+        const c = STAR_CFG[i] || STAR_CFG[0];
+        const p = clamp((raw - c.off) * 1.7, 0, 1);
+        const x = (c.fromX + (c.toX - c.fromX) * p) * r.width;
+        const y = (c.fromY + (c.toY - c.fromY) * p) * r.height;
+        star.style.transform = `translate(${x.toFixed(0)}px, ${y.toFixed(0)}px) rotate(${c.ang}deg)`;
+        star.style.opacity = (Math.sin(clamp(p, 0, 1) * Math.PI)).toFixed(2);
+      });
+    };
+    updateStars();
+    addEventListener('scroll', updateStars, { passive: true });
+    addEventListener('resize', updateStars, { passive: true });
   </script>
 </body>
 </html>
