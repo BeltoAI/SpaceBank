@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpaceBank</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f2f0e8;
+      --muted: rgba(242,240,232,.68);
+      --line: rgba(242,240,232,.25);
+      --bg: #020202;
+      --ease: cubic-bezier(.19,1,.22,1);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--paper);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      height: 70px;
+      padding: 0 clamp(22px, 5vw, 72px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .brand,
+    .nav a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-decoration: none;
+      text-shadow: 0 1px 20px rgba(0,0,0,.45);
+    }
+
+    .nav a {
+      pointer-events: auto;
+      letter-spacing: .18em;
+      opacity: .72;
+      transition: opacity .5s var(--ease), transform .5s var(--ease);
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      opacity: 1;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .slide {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      align-items: flex-start;
+      padding: clamp(108px, 16vh, 170px) clamp(24px, 6vw, 88px);
+    }
+
+    .slide img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -3;
+      transform: translate(-50%, -50%) scale(1.08);
+      transform-origin: center center;
+      filter: brightness(.82) contrast(1.08) saturate(.92);
+      transition: transform 1.6s var(--ease), filter 1.6s var(--ease);
+      will-change: transform;
+    }
+
+
+    .slide:nth-child(1) img { object-position: center center; }
+    .slide:nth-child(2) img { object-position: center center; }
+    .slide:nth-child(3) img { object-position: center center; }
+    .slide:nth-child(4) img { object-position: center center; }
+    .slide:nth-child(5) img { object-position: center center; }
+    .slide:nth-child(6) img { object-position: center center; }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.22) 48%, rgba(0,0,0,.42)),
+        linear-gradient(0deg, rgba(0,0,0,.48), rgba(0,0,0,.04) 46%, rgba(0,0,0,.40));
+    }
+
+    .slide.light::before {
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.50), rgba(0,0,0,.06) 50%, rgba(0,0,0,.22)),
+        linear-gradient(0deg, rgba(0,0,0,.22), rgba(0,0,0,.02) 54%, rgba(0,0,0,.34));
+    }
+
+    .slide.active img {
+      transform: translate(-50%, -50%) scale(1.04);
+      filter: brightness(.9) contrast(1.08) saturate(.98);
+    }
+
+    .copy {
+      width: min(920px, 88vw);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .slide.active .copy {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .place-top-left {
+      align-self: flex-start;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .place-bottom-left {
+      align-self: flex-end;
+      margin-left: 0;
+      margin-right: auto;
+      padding-bottom: clamp(46px, 8vh, 96px);
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: -.055em;
+      line-height: .86;
+      text-wrap: balance;
+      text-shadow: 0 8px 40px rgba(0,0,0,.42);
+    }
+
+    h1 {
+      font-size: clamp(88px, 15vw, 238px);
+    }
+
+    h2 {
+      font-size: clamp(68px, 10.8vw, 166px);
+    }
+
+    .sentence {
+      margin: 0;
+      max-width: 650px;
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(42px, 7vw, 108px);
+      letter-spacing: -.045em;
+      line-height: .92;
+      color: var(--paper);
+      text-shadow: 0 8px 40px rgba(0,0,0,.42);
+    }
+
+    .actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 148px;
+      padding: 15px 20px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.035);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+      transition:
+        transform .55s var(--ease),
+        border-color .55s var(--ease),
+        background .55s var(--ease),
+        color .55s var(--ease),
+        box-shadow .55s var(--ease);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--paper);
+      transform: translateX(-102%);
+      transition: transform .65s var(--ease);
+      z-index: -1;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-3px);
+      color: #050505;
+      border-color: var(--paper);
+      background: transparent;
+      box-shadow: 0 18px 60px rgba(0,0,0,.24);
+      outline: none;
+    }
+
+    .btn:hover::before,
+    .btn:focus-visible::before {
+      transform: translateX(0);
+    }
+
+    .btn:active {
+      transform: translateY(-1px) scale(.99);
+    }
+
+    .legal {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .legal a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      transition: color .45s var(--ease), opacity .45s var(--ease), transform .45s var(--ease);
+    }
+
+    .legal a:hover,
+    .legal a:focus-visible {
+      color: var(--paper);
+      opacity: 1;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      .copy,
+      .slide img,
+      .btn,
+      .btn::before,
+      .legal a,
+      .nav a {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        height: 62px;
+      }
+
+      .nav a {
+        display: none;
+      }
+
+      .slide {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding-top: 105px;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      h1 {
+        font-size: clamp(76px, 23vw, 126px);
+      }
+
+      h2 {
+        font-size: clamp(58px, 18vw, 96px);
+      }
+
+      .sentence {
+        font-size: clamp(44px, 14vw, 78px);
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .place-bottom-left,
+      .place-top-left {
+        align-self: flex-start;
+        margin-left: 0;
+        margin-right: auto;
+        padding-bottom: 0;
+        width: min(920px, 88vw);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="brand">SpaceBank</div>
+    <a href="#demo">Launch Demo</a>
+  </header>
+
+  <main>
+    <section class="slide active">
+      <img src="images/Earth.webp" alt="Mars from space">
+      <div class="copy place-top-left">
+        <h1>Your money. Beyond Earth.</h1>
+        <div class="actions">
+          <a class="btn" href="#demo">Launch Demo</a>
+          <a class="btn" href="#waitlist">Waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <img src="images/FIRE.png" alt="Engine test fire">
+      <div class="copy place-bottom-left">
+        <h2>A multiplanet species needs a multiplanet bank</h2>
+      </div>
+    </section>
+
+    <section class="slide light">
+      <img src="images/Separation.png" alt="Spacecraft above Earth">
+      <div class="copy place-bottom-left">
+        <h2>People will live on Earth, in orbit, on the Moon, and on Mars.</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <img src="images/marsaswell.png" alt="Mars surface">
+      <div class="copy place-top-left">
+        <p class="sentence">Their money should move with them.</p>
+      </div>
+    </section>
+
+    <section class="slide light" id="demo">
+      <img src="images/Mars.png" alt="Earth from space">
+      <div class="copy place-top-left">
+        <h2>Banking should still work, even when you are on Mars.</h2>
+        <div class="actions">
+          <a class="btn" href="#">Launch Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="waitlist">
+      <img src="images/EarthMoon.webp" alt="Earth and Moon">
+      <div class="copy place-bottom-left">
+        <p class="sentence">SpaceBank is a first step toward a true Space Economy.</p>
+        <div class="actions">
+          <a class="btn" href="waitlist.html">Join Waitlist</a>
+        </div>
+        <div class="legal" aria-label="Legal links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { threshold: 0.45 });
+
+    slides.forEach(slide => observer.observe(slide));
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const moveImages = () => {
+      slides.forEach(slide => {
+        const img = slide.querySelector('img');
+        const y = clamp(slide.getBoundingClientRect().top * -0.025, -42, 42);
+        img.style.transform = `translate(-50%, calc(-50% + ${y}px)) scale(1.08)`;
+      });
+    };
+
+    moveImages();
+    addEventListener('scroll', moveImages, { passive: true });
+    addEventListener('resize', moveImages, { passive: true });
+  </script>
+</body>
+</html>

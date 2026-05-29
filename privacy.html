@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | SpaceBank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --paper: #f2f0e8;
+  --muted: rgba(242,240,232,.68);
+  --soft: rgba(242,240,232,.50);
+  --line: rgba(242,240,232,.20);
+  --bg: #020202;
+  --panel: rgba(255,255,255,.045);
+  --ease: cubic-bezier(.19,1,.22,1);
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #020202;
+  color: var(--paper);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: radial-gradient(circle at 70% 18%, rgba(242,240,232,.18), transparent 27%), radial-gradient(circle at 15% 75%, rgba(242,240,232,.08), transparent 34%), #020202;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.42) 52%, rgba(0,0,0,.72));
+}
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: 70px;
+  padding: 0 clamp(22px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.brand, .nav a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--paper);
+  text-decoration: none;
+  text-shadow: 0 1px 20px rgba(0,0,0,.45);
+}
+.nav a { pointer-events: auto; letter-spacing: .18em; opacity: .72; transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.nav a:hover, .nav a:focus-visible { opacity: 1; transform: translateY(-2px); outline: none; }
+.page {
+  width: min(1120px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: clamp(112px, 16vh, 165px) 0 clamp(70px, 10vh, 120px);
+}
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+h1, h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -.055em;
+  line-height: .88;
+  text-wrap: balance;
+}
+h1 { max-width: 980px; font-size: clamp(76px, 12vw, 172px); }
+h2 { margin-top: 46px; font-size: clamp(42px, 6vw, 82px); }
+.lede {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
+}
+.panel {
+  margin-top: 48px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 28px 90px rgba(0,0,0,.25);
+}
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+.item {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255,255,255,.035);
+}
+.item strong { display:block; margin-bottom: 10px; font-size: 12px; letter-spacing: .20em; text-transform: uppercase; }
+p, li { color: var(--muted); line-height: 1.72; font-size: 15px; }
+ul { padding-left: 20px; }
+a { color: var(--paper); }
+.actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; }
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 148px;
+  padding: 15px 20px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.035);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  transition: transform .55s var(--ease), border-color .55s var(--ease), background .55s var(--ease), color .55s var(--ease), box-shadow .55s var(--ease);
+}
+.btn::before { content:""; position:absolute; inset:0; background:var(--paper); transform:translateX(-102%); transition:transform .65s var(--ease); z-index:-1; }
+.btn:hover, .btn:focus-visible { transform: translateY(-3px); color:#050505; border-color:var(--paper); background:transparent; box-shadow:0 18px 60px rgba(0,0,0,.24); outline:none; }
+.btn:hover::before, .btn:focus-visible::before { transform: translateX(0); }
+.footer { margin-top: 52px; display:flex; flex-wrap:wrap; gap:16px; color:var(--soft); font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+.footer a { color: var(--soft); text-decoration:none; transition: color .45s var(--ease), transform .45s var(--ease); }
+.footer a:hover, .footer a:focus-visible { color:var(--paper); transform:translateY(-2px); outline:none; }
+small { color: var(--soft); line-height: 1.6; }
+@media (max-width: 760px) {
+  .nav { height: 62px; }
+  .nav a { display: none; }
+  .page { width: min(100vw - 34px, 1120px); padding-top: 102px; }
+  h1 { font-size: clamp(62px, 19vw, 108px); }
+  .grid { grid-template-columns: 1fr; }
+  .btn { width: 100%; }
+}
+
+</style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">SpaceBank</a>
+    <a href="index.html#demo">Launch Demo</a>
+  </header>
+  
+  <main class="page">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>Your data should not need gravity either.</h1>
+    <p class="lede">This Privacy Policy explains what SpaceBank may collect through the website, prototype, waitlist, receipt pages, and related demo experiences.</p>
+    <section class="panel">
+      <h2>1. Information we collect</h2>
+      <div class="grid">
+        <div class="item"><strong>Waitlist data</strong><p>Name, email, company, role, and any message you choose to submit.</p></div>
+        <div class="item"><strong>Usage data</strong><p>Pages viewed, device/browser information, referral source, timestamps, and general interaction analytics.</p></div>
+        <div class="item"><strong>Demo data</strong><p>Prototype entries, generated receipt details, simulated destinations, and other information created inside the demo.</p></div>
+        <div class="item"><strong>Communications</strong><p>Messages you send to us and responses we provide.</p></div>
+      </div>
+      <h2>2. How we use information</h2>
+      <ul>
+        <li>To operate the website and prototype.</li>
+        <li>To manage the waitlist and send launch updates.</li>
+        <li>To improve product design, reliability, security, and user experience.</li>
+        <li>To respond to inquiries and prevent misuse.</li>
+      </ul>
+      <h2>3. What we do not do</h2>
+      <p>We do not sell your personal information. We do not use waitlist information to make real credit, banking, lending, or investment decisions.</p>
+      <h2>4. Service providers</h2>
+      <p>We may use hosting, analytics, email, form, security, and infrastructure vendors to operate SpaceBank. These providers may process information on our behalf.</p>
+      <h2>5. Cookies and analytics</h2>
+      <p>We may use cookies, local storage, and analytics tools to understand site performance and improve the experience. Your browser may allow you to block or delete cookies.</p>
+      <h2>6. Data retention</h2>
+      <p>We keep information only as long as reasonably necessary for the purposes above, unless a longer retention period is required for legal, security, or business reasons.</p>
+      <h2>7. Your choices</h2>
+      <p>You may request access, correction, or deletion of information you submitted by contacting us. You may also unsubscribe from non-essential emails.</p>
+      <h2>8. Security</h2>
+      <p>We use reasonable technical and organizational safeguards, but no internet service is perfectly secure.</p>
+      <h2>9. Changes</h2>
+      <p>We may update this policy as SpaceBank evolves. The updated version will be posted here.</p>
+      <p><small>Effective date: May 29, 2026</small></p>
+    </section>
+    <div class="actions"><a class="btn" href="index.html">Back Home</a><a class="btn" href="terms.html">Terms</a></div>
+    <nav class="footer"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="waitlist.html">Waitlist</a></nav>
+  </main>
+
+</body>
+</html>
