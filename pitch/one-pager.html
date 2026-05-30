@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpaceBank — One-Pager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2f0e8;
+      --muted: rgba(242,240,232,.66);
+      --soft: rgba(242,240,232,.45);
+      --line: rgba(242,240,232,.18);
+      --bg: #050507;
+      --accent: rgba(140,168,232,1);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #0a0a0c; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      color: var(--paper);
+      padding: 28px;
+      display: flex;
+      justify-content: center;
+    }
+    .sheet {
+      width: 100%;
+      max-width: 880px;
+      background:
+        radial-gradient(circle at 88% 6%, rgba(120,150,220,.12), transparent 36%),
+        radial-gradient(circle at 6% 96%, rgba(200,140,120,.07), transparent 40%),
+        var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: clamp(34px, 5vw, 56px);
+    }
+    header { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+    .brand { font-size: 13px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; }
+    .brand .by { display: block; margin-top: 6px; color: var(--soft); font-size: 10px; letter-spacing: .2em; }
+    .tagline { text-align: right; color: var(--accent); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+    h1 {
+      margin: 26px 0 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-weight: 300;
+      font-size: clamp(38px, 6vw, 62px);
+      letter-spacing: -.04em; line-height: .98;
+    }
+    .sub { margin: 14px 0 0; max-width: 640px; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+    .grid { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 36px; }
+    .block h2 {
+      margin: 0 0 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .block .lead { margin: 0 0 6px; color: var(--paper); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 400; font-size: 22px; line-height: 1.15; letter-spacing: -.01em; }
+    .block p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.55; }
+    .block ul { margin: 0; padding-left: 16px; }
+    .block li { color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+    .full { grid-column: 1 / -1; }
+    .stats { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 4px; }
+    .stat .n { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300; font-size: 38px; line-height: .9; }
+    .stat .c { margin-top: 6px; color: var(--soft); font-size: 11.5px; line-height: 1.4; max-width: 180px; }
+    footer { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--soft); font-size: 11.5px; letter-spacing: .04em; }
+    a { color: var(--paper); text-decoration: none; }
+    .disclaimer { margin-top: 14px; color: var(--soft); font-size: 10.5px; line-height: 1.5; }
+    @media print {
+      @page { size: A4; margin: 11mm; }
+      html, body { background: #fff; padding: 0; }
+      .sheet { border: 0; border-radius: 0; max-width: none; padding: 0; }
+      header { padding-bottom: 14px; }
+      h1 { font-size: 40px; margin-top: 16px; }
+      .sub { font-size: 12px; line-height: 1.45; margin-top: 10px; max-width: 100%; }
+      .grid { margin-top: 16px; gap: 13px 28px; }
+      .block h2 { margin-bottom: 5px; }
+      .block .lead { font-size: 16.5px; margin-bottom: 4px; }
+      .block p, .block li { font-size: 11px; line-height: 1.4; }
+      .block ul { padding-left: 15px; }
+      .stat .n { font-size: 30px; }
+      .stat .c { font-size: 10px; margin-top: 4px; }
+      .stats { gap: 22px; }
+      footer { margin-top: 16px; padding-top: 12px; font-size: 10.5px; }
+      .disclaimer { margin-top: 10px; font-size: 9px; line-height: 1.4; }
+    }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <div class="brand">SpaceBank<span class="by">A Belto Inc. project</span></div>
+      <div class="tagline">GDG Stanford × Red Bull Basement · May 31</div>
+    </header>
+
+    <h1>Banking for a multiplanet species.</h1>
+    <p class="sub">SpaceBank is the financial layer for a multiplanet civilization — one account that moves with you across Earth, orbit, the Moon, and Mars. We monetize cross-border payments and mission treasury on Earth today, and become the default settlement rail as the space economy comes online.</p>
+
+    <div class="grid">
+      <div class="block">
+        <h2>Problem</h2>
+        <p class="lead">Money stops at the atmosphere.</p>
+        <p>Humanity is going multiplanet, but money still stops at the atmosphere. Today's banking rails assume one planet, instant links, and a branch nearby. Cross-border payments are already slow and costly; cross-<em>planetary</em> value transfer doesn't exist.</p>
+      </div>
+      <div class="block">
+        <h2>Solution</h2>
+        <p class="lead">One account that moves between worlds.</p>
+        <p>Belto's orbital software is the wedge today; SpaceBank is the financial layer it grows into. A latency-aware account and settlement network. Value moves between worlds the only way that scales — as light, over optical laser links between orbital relays — with settlement designed for distance and delay rather than fighting it.</p>
+      </div>
+
+      <div class="block">
+        <h2>How it works</h2>
+        <p class="lead">Value travels as light.</p>
+        <p>A transfer originates at a SpaceBank relay in Mars orbit, crosses deep space via optical laser to a relay in Earth orbit, then settles into Earth's banking rails — arriving whole, minutes later, not "instantly."</p>
+      </div>
+      <div class="block">
+        <h2>What we serve today</h2>
+        <p class="lead">Revenue on Earth, now.</p>
+        <ul>
+          <li>Global multi-currency accounts &amp; transfers</li>
+          <li>Mission treasury for space-sector teams</li>
+          <li>Remote-site &amp; off-grid payments</li>
+          <li>Orbital vault — air-gapped key/record custody</li>
+        </ul>
+      </div>
+
+      <div class="block full">
+        <h2>Market</h2>
+        <p class="lead">An Earth wedge into a frontier no one owns.</p>
+        <div class="stats">
+          <div class="stat"><div class="n">$625B</div><div class="c">Cross-border payments revenue pool, 2025 — our beachhead.</div></div>
+          <div class="stat"><div class="n">$190T</div><div class="c">Annual cross-border payment volume today.</div></div>
+          <div class="stat"><div class="n">$1.8T</div><div class="c">Projected space economy by 2035 (from ~$630B in 2023).</div></div>
+        </div>
+        <p style="margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.5;">Path to $1M ARR: ~30–40 space-sector teams on treasury + platform fees (~$25K ACV) — no consumer scale required.</p>
+      </div>
+
+      <div class="block">
+        <h2>Business model</h2>
+        <p class="lead">Four revenue lines.</p>
+        <p>Interchange &amp; FX spread, net interest on treasury balances, vault-as-a-service subscriptions, and platform/API fees for mission payroll and settlement.</p>
+      </div>
+      <div class="block">
+        <h2>Built with</h2>
+        <p class="lead">A working bank, run by AI.</p>
+        <p>Live prototype on Gemini, Google AI Studio &amp; Cloud Run: a <b>Space Bank AI</b> agent that runs the account from plain language (net worth, insights, transfers, vault stores); <b>latency-aware transfers</b> that fly as light with per-distance countdowns; multi-planet accounts on named relays; and an <b>AI-valued orbital vault</b>. Marketing site + waitlist also live at belto.space.</p>
+      </div>
+
+      <div class="block">
+        <h2>Traction</h2>
+        <p class="lead">Signed pilot revenue. Pulled, not pushed.</p>
+        <p>Signed LOS (~$100K pilot, Genesis Codes / USSF prime) with two orbital operators under NDA. 3,000+ engineers and builders inbound on the Belto waitlist — demand, not ad spend. Public site live; AI-run prototype built and deployed within the sprint.</p>
+      </div>
+      <div class="block">
+        <h2>Team — Belto Inc.</h2>
+        <p class="lead">Runtime engineering × space systems.</p>
+        <p><b>Emil Shirokikh</b> — Co-founder / CEO. Built Belto's onboard-AI runtime end-to-end; radiation-performance white paper (Zenodo 2026, 1,000+ views); NASA ARSET + EU Space Academy training. Ex-Capgemini, led $10M+ Mercedes-Benz program (50 people). Stanford GSB Ignite, UCR MBA, TU Stuttgart.<br><b>Anna Atlasova</b> — Co-founder. Owns customer relations &amp; business development; 12 yrs in data analytics &amp; project management; created a rocket-engineering course and launched a small rocket. Ex-Amazon B2B; TU Munich MS; Stanford GSB Ignite; BS Energy Engineering (propulsion, electronics, vacuum systems). Both founders full-time, in person daily in Menlo Park.<br><b>Anna Gong</b> — Advisor. Founder &amp; CEO of Perx Technologies (AI customer-engagement SaaS, backed by Golden Gate Ventures); ex-Infor APJ VP. 20+ yrs scaling enterprise &amp; AI products across APAC.</p>
+      </div>
+
+      <div class="block full">
+        <h2>The ask</h2>
+        <p class="lead">Raising $1.5M pre-seed.</p>
+        <p>12 months of runway — to ship the licensed payments core, convert the waitlist to paying users, and reach $500K–$1M ARR. Use of funds: 50% engineering &amp; product, 25% licensing &amp; compliance, 25% GTM &amp; operations. By month 12: payments license filed, 30+ paying space-sector teams, and 2 pilots converted to paid contracts.</p>
+      </div>
+    </div>
+
+    <footer>
+      <span>Contact: <a href="mailto:support@belto.world">support@belto.world</a></span>
+      <span><a href="https://www.belto.space">belto.space</a></span>
+      <span>Raising $1.5M pre-seed</span>
+    </footer>
+    <p class="disclaimer">SpaceBank is an experimental product concept by Belto Inc. It is not a bank and does not provide insured banking, custody, lending, or money transmission services. Market figures: WEF &amp; McKinsey space-economy outlook (2024); industry cross-border payment estimates (2023–2025).</p>
+  </div>
+</body>
+</html>
